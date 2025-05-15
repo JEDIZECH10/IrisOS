@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+// IrisOS - Command-line launcher
+const path = require('path');
+const fs = require('fs');
+
+// Find the main directory
+const mainPath = path.resolve(__dirname, '..');
+
+// Execute the main application
+require(path.join(mainPath, 'index.js'));
