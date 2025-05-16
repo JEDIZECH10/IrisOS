@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# TextOS Linux Installer Script
-# This script will set up TextOS on a Linux system
+# IrisOS Linux Installer Script
+# This script will set up IrisOS on a Linux system
 
 # Color definitions
 RED='\033[0;31m'
@@ -16,14 +16,14 @@ command_exists() {
 }
 
 echo -e "${BLUE}"
-echo "  _______        _    ____   _____ "
-echo " |__   __|      | |  / __ \ / ____|"
-echo "    | | _____  _| |_| |  | | (___  "
-echo "    | |/ _ \ \/ / __| |  | |\___ \ "
-echo "    | |  __/>  <| |_| |__| |____) |"
-echo "    |_|\___/_/\_\\\\__|\\____/|_____/ "
+echo " _____          _         ____   _____  "
+echo "|_   _|        (_)       / __ \ / ____| "
+echo "  | |    _ __   _   ___  | |  | | (___  "
+echo "  | |   | '__\ | | / __| | |  | |\___ \ "
+echo " _| |_  | |    | | \__ \ | |__| |____) |"
+echo "|_____| |_|    |_|  ___/ \____/ |_____/ "
 echo -e "${NC}"
-echo -e "${GREEN}TextOS Linux Installer${NC}"
+echo -e "${GREEN}IrisOS Linux Installer${NC}"
 echo "========================================"
 echo ""
 
@@ -34,14 +34,14 @@ if command_exists node; then
   echo -e "${GREEN}Found Node.js $NODE_VERSION${NC}"
 else
   echo -e "${RED}Node.js not found!${NC}"
-  echo "TextOS requires Node.js to run. Please install Node.js and try again."
+  echo "IrisOS requires Node.js to run. Please install Node.js and try again."
   echo "You can install Node.js from https://nodejs.org/ or through your package manager."
   exit 1
 fi
 
 # Create installation directory
-INSTALL_DIR="$HOME/.textos"
-echo -e "\nInstalling TextOS to: ${BLUE}$INSTALL_DIR${NC}"
+INSTALL_DIR="$HOME/.irisos"
+echo -e "\nInstalling IrisOS to: ${BLUE}$INSTALL_DIR${NC}"
 
 if [ -d "$INSTALL_DIR" ]; then
   echo -e "${YELLOW}Installation directory already exists.${NC}"
@@ -64,26 +64,26 @@ echo "Copying files..."
 # Copy all necessary files
 cp -r lib/* "$INSTALL_DIR/lib/"
 cp index.js server.js "$INSTALL_DIR/"
-cp TextOS.sh RebootToTextOS.sh "$INSTALL_DIR/"
+cp IrisOS.sh RebootToIrisOS.sh "$INSTALL_DIR/"
 
 # Make scripts executable
-chmod +x "$INSTALL_DIR/TextOS.sh" "$INSTALL_DIR/RebootToTextOS.sh"
+chmod +x "$INSTALL_DIR/IrisOS.sh" "$INSTALL_DIR/RebootToIrisOS.sh"
 
 # Create launcher script in ~/.local/bin
-LAUNCHER="$HOME/.local/bin/textos"
+LAUNCHER="$HOME/.local/bin/irisos"
 echo "Creating launcher script at $LAUNCHER"
 
 cat > "$LAUNCHER" << 'EOF'
 #!/bin/bash
-cd $HOME/.textos
-./RebootToTextOS.sh
+cd $HOME/.irisos
+./RebootToIrisOS.sh
 EOF
 
 chmod +x "$LAUNCHER"
 
-echo -e "\n${GREEN}TextOS has been successfully installed!${NC}"
-echo -e "\nYou can start TextOS by running:"
-echo -e "${BLUE}textos${NC}"
+echo -e "\n${GREEN}IrisOS has been successfully installed!${NC}"
+echo -e "\nYou can start IrisOS by running:"
+echo -e "${BLUE}irisos${NC}"
 
 # Check if ~/.local/bin is in PATH
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
@@ -91,8 +91,8 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   echo "You may need to add it by adding the following line to your .bashrc or .zshrc file:"
   echo -e "${BLUE}export PATH=\"\$HOME/.local/bin:\$PATH\"${NC}"
   echo "Then restart your terminal or run: source ~/.bashrc"
-  echo -e "\nAlternatively, you can run TextOS using the full path:"
-  echo -e "${BLUE}$HOME/.textos/RebootToTextOS.sh${NC}"
+  echo -e "\nAlternatively, you can run IrisOS using the full path:"
+  echo -e "${BLUE}$HOME/.irisos/RebootToIrisOS.sh${NC}"
 fi
 
 echo -e "\n${GREEN}Installation complete!${NC}"
