@@ -1,6 +1,6 @@
-# TextOS
+# IrisOS
 
-A custom text-based operating system with a command-line interface, desktop environment, integrated browser, and simulated file system.
+A custom text-based operating system with a command-line interface, desktop environment, integrated browser, and  file system.
 
 ## Features
 
@@ -25,7 +25,7 @@ node install.js
 ```
 
 This will:
-1. Create a `.textos` directory in your home folder
+1. Create a `.irisos` directory in your home folder
 2. Copy all necessary files
 3. Create a symlink in `~/.local/bin` to make it executable from anywhere
 
@@ -33,40 +33,40 @@ This will:
 
 1. Clone this repository
 2. Run `npm install` to install dependencies
-3. Run `node index.js` to start TextOS
+3. Run `node index.js` to start IrisOS
 
 ## Usage
 
-After installation, you can start TextOS by running:
+After installation, you can start IrisOS by running:
 
 ```bash
-textos
+irisos
 ```
 
 If the symlink is not in your PATH, you can run:
 
 ```bash
-~/.local/bin/textos
+~/.local/bin/irisos
 ```
 
 Or:
 
 ```bash
-node ~/.textos/index.js
+node ~/.irisos/index.js
 ```
 
 ## Usage Guide
 
 ### First Boot Experience
 
-When you start TextOS for the first time, you'll be presented with the BIOS setup screen. Here you can configure:
+When you start IrisOS for the first time, you'll be presented with the BIOS setup screen. Here you can configure:
 
 - System settings (username, hostname, language)
 - Boot options (splash screen, boot delay)
 - Display settings (desktop theme)
 - Network settings
 
-After completing the BIOS setup, TextOS will boot into either:
+After completing the BIOS setup, IrisOS will boot into either:
 - Desktop environment (if enabled in BIOS)
 - Terminal mode (command-line interface)
 
@@ -92,7 +92,7 @@ Desktop commands:
 ### Web Browser
 
 The integrated browser provides:
-- Navigation to simulated websites
+- Navigation to  websites
 - Bookmarking system
 - Browsing history tracking
 - Browser settings
@@ -128,14 +128,14 @@ Browser commands:
 - `desktop` - Launch the desktop environment
 - `browser` - Launch the web browser
 - `bios` - Enter BIOS setup
-- `exit` or `shutdown` - Exit TextOS
+- `exit` or `shutdown` - Exit IrisOS
 
 ## Web Interface
 
-To start TextOS with the web interface, set the environment variable `ENABLE_SERVER=true`:
+To start IrisOS with the web interface, set the environment variable `ENABLE_SERVER=true`:
 
 ```bash
-ENABLE_SERVER=true textos
+ENABLE_SERVER=true irisos
 ```
 
 This will start a web server on port 5000, which you can access at http://localhost:5000

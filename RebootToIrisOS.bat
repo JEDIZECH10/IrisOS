@@ -11,7 +11,7 @@ echo   SYSTEM REBOOT SIMULATION
 echo   =======================
 echo.
 color 0F
-echo   WARNING: This will simulate a system reboot and launch IrisOS.
+echo   WARNING: This will initiate a system reboot and launch IrisOS.
 echo   Your actual computer will NOT be restarted.
 echo.
 echo   Press any key to continue or Ctrl+C to cancel...
@@ -34,7 +34,7 @@ echo.
 echo    Do not turn off your computer.
 timeout /t 3 /nobreak >nul
 
-:: Black screen to simulate shutdown
+:: Black screen to initiate shutdown
 cls
 color 0F
 timeout /t 3 /nobreak >nul

@@ -1,35 +1,35 @@
-# TextOS for Linux
+# IrisOS for Linux
 
-This is TextOS, a custom text-based operating system that simulates a real OS with a desktop environment, boot process, and command-line interface.
+This is IrisOS, a custom text-based operating system that is a real OS with a desktop environment, boot process, and command-line interface.
 
-## Running TextOS on Linux
+## Running IrisOS on Linux
 
 ### Quick Start (No Installation)
 
 1. Make sure Node.js is installed on your system
-2. Open a terminal in the TextOS directory
+2. Open a terminal in the IrisOS directory
 3. Run the following command:
 
 ```bash
-./run-textos.sh
+./run-irisos.sh
 ```
 
-### Installing TextOS
+### Installing IrisOS
 
-To install TextOS on your Linux system:
+To install IrisOS on your Linux system:
 
 1. Make sure Node.js is installed on your system
-2. Open a terminal in the TextOS directory
+2. Open a terminal in the IrisOS directory
 3. Run the installation script:
 
 ```bash
 ./install-linux.sh
 ```
 
-4. After installation, you can start TextOS from anywhere by running:
+4. After installation, you can start IrisOS from anywhere by running:
 
 ```bash
-textos
+irisos
 ```
 
 ### System Requirements
@@ -76,10 +76,10 @@ From the terminal mode, you can use these commands:
 
 ## Boot Options
 
-When starting TextOS, you can choose from different boot options:
+When starting IrisOS, you can choose from different boot options:
 - Normal Mode - Full desktop environment
 - Safe Mode - Terminal only with limited features
-- System Recovery - For troubleshooting (currently simulated)
+- System Recovery - For troubleshooting ( )
 
 ## Troubleshooting
 
@@ -87,18 +87,18 @@ If you encounter any issues:
 
 1. Try running in Safe Mode by selecting it from the boot menu
 2. Check that Node.js is properly installed
-3. Ensure all TextOS files have proper permissions
+3. Ensure all IrisOS files have proper permissions
 
 ## Uninstalling
 
-To uninstall TextOS:
+To uninstall IrisOS:
 
-1. Remove the TextOS directory:
+1. Remove the IrisOS directory:
 ```bash
-rm -rf ~/.textos
+rm -rf ~/.irisos
 ```
 
 2. Remove the launcher:
 ```bash
-rm ~/.local/bin/textos
+rm ~/.local/bin/irisos
 ```

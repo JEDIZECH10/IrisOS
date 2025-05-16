@@ -1,26 +1,28 @@
 #!/usr/bin/env node
 
-// TextOS Installer
+// IrisOS Installer
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const child_process = require('child_process');
 
 console.log('\n\x1b[36m');
-console.log('  _______        _    ____   _____ ');
-console.log(' |__   __|      | |  / __ \\ / ____|');
-console.log('    | | _____  _| |_| |  | | (___  ');
-console.log('    | |/ _ \\ \\/ / __| |  | |\\___ \\ ');
-console.log('    | |  __/>  <| |_| |__| |____) |');
-console.log('    |_|\\___/_/\\_\\\\__|\\____/|_____/ ');
+console.log ('.                                        ')
+console.log ('  _____          _         ____   _____  ')
+console.log (' |_   _|        (_)       / __ \ / ____| ')
+console.log ('   | |    _ __   _   ___  | |  | | (___  ')
+console.log ('   | |   | __\ | | / __| | |  | |\___ \  ')
+console.log ('  _| |_  | |    | | \__ \ | |__| |____ | ')
+console.log (' |_____| |_|    |_|  ___/ \____/ |_____/ ')
+console.log ('.                                        ')
 console.log('\x1b[0m');
 
-console.log('\x1b[32m\nTextOS Installer\x1b[0m');
-console.log('This script will install TextOS on your system\n');
+console.log('\x1b[32m\nIrisOS Installer\x1b[0m');
+console.log('This script will install IrisOS on your system\n');
 
 // Determine installation directory
 const userHome = os.homedir();
-const installDir = path.join(userHome, '.textos');
+const installDir = path.join(userHome, '.Irisos');
 
 console.log(`Installing to: ${installDir}`);
 
@@ -35,7 +37,7 @@ const sourceDir = __dirname;
 const filesToCopy = [
   'index.js',
   'server.js',
-  'bin/textos'
+  'bin/irisos'
 ];
 
 // Copy lib directory
@@ -69,12 +71,12 @@ filesToCopy.forEach(file => {
 });
 
 // Make bin file executable
-fs.chmodSync(path.join(installDir, 'bin', 'textos'), '755');
+fs.chmodSync(path.join(installDir, 'bin', 'irisos'), '755');
 console.log('Made binary executable');
 
 // Create symlink in user's bin directory
 const userBinDir = path.join(userHome, '.local', 'bin');
-const symlinkPath = path.join(userBinDir, 'textos');
+const symlinkPath = path.join(userBinDir, 'irisos');
 
 try {
   // Create user bin directory if it doesn't exist
@@ -89,16 +91,16 @@ try {
   }
   
   // Create symlink
-  fs.symlinkSync(path.join(installDir, 'bin', 'textos'), symlinkPath);
+  fs.symlinkSync(path.join(installDir, 'bin', 'irisos'), symlinkPath);
   console.log(`Created symlink: ${symlinkPath}`);
   
-  console.log('\n\x1b[32mTextOS installed successfully!\x1b[0m');
-  console.log(`\nTo start TextOS, run:\n\x1b[33m${symlinkPath}\x1b[0m`);
+  console.log('\n\x1b[32mIrisOS installed successfully!\x1b[0m');
+  console.log(`\nTo start IrisOS, run:\n\x1b[33m${symlinkPath}\x1b[0m`);
   console.log('\nMake sure your ~/.local/bin directory is in your PATH.');
   console.log('\nIf not, add this line to your ~/.bashrc or ~/.zshrc:');
   console.log('\x1b[33mexport PATH="$HOME/.local/bin:$PATH"\x1b[0m\n');
 } catch (error) {
   console.error('\x1b[31mError creating symlink:\x1b[0m', error.message);
-  console.log('\nTo start TextOS, you can run:');
+  console.log('\nTo start IrisOS, you can run:');
   console.log(`\x1b[33mnode ${path.join(installDir, 'index.js')}\x1b[0m\n`);
 }

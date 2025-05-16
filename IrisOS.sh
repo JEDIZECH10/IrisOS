@@ -66,7 +66,7 @@ echo ""
 center_text "IrisOS Boot Loader v1.0"
 center_text "======================"
 echo ""
-center_text "Simulating system reboot..."
+center_text "System rebooting..."
 sleep 2
 
 # BIOS POST screen

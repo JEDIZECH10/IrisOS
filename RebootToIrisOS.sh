@@ -44,12 +44,12 @@ clear_screen
 # Show warning message
 set_color blue
 echo ""
-echo "  SYSTEM REBOOT SIMULATION"
+echo "  SYSTEM REBOOTING..."
 echo "  ======================="
 echo ""
 set_color white
-echo "  WARNING: This will simulate a system reboot and launch IrisOS."
-echo "  Your actual computer will NOT be restarted."
+echo "  WARNING: This will reboot your system and launch IrisOS."
+echo "  Your actual computer will be restarted."
 echo ""
 echo "  Press any key to continue or Ctrl+C to cancel..."
 read -n 1
@@ -71,11 +71,11 @@ echo ""
 echo "   Do not turn off your computer."
 sleep 3
 
-# Black screen to simulate shutdown
+# Black screen to shutdown
 clear_screen
 sleep 3
 
-# BIOS simulation
+# BIOS
 clear_screen
 set_color blue
 echo ""

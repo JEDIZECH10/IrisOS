@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// TextOS Uninstaller
+// IrisOS Uninstaller
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
@@ -12,28 +12,30 @@ const rl = readline.createInterface({
 });
 
 console.log('\n\x1b[36m');
-console.log('  _______        _    ____   _____ ');
-console.log(' |__   __|      | |  / __ \\ / ____|');
-console.log('    | | _____  _| |_| |  | | (___  ');
-console.log('    | |/ _ \\ \\/ / __| |  | |\\___ \\ ');
-console.log('    | |  __/>  <| |_| |__| |____) |');
-console.log('    |_|\\___/_/\\_\\\\__|\\____/|_____/ ');
+console.log ('.                                        ')
+console.log ('  _____          _         ____   _____  ')
+console.log (' |_   _|        (_)       / __ \ / ____| ')
+console.log ('   | |    ___    _   ___  ||  | | (___   ')
+console.log ('   | |   | __\  | | / __| ||  | | \___ \ ')
+console.log ('  _| |_  | |    | | \__ \ ||__| |.____ | ')
+console.log (' |_____| |_|    |_| |___/ \____/ |_____/ ')
+console.log ('.                                        ')
 console.log('\x1b[0m');
 
-console.log('\x1b[31mTextOS Uninstaller\x1b[0m');
-console.log('This script will remove TextOS from your system\n');
+console.log('\x1b[31mIrisOS Uninstaller\x1b[0m');
+console.log('This script will remove IrisOS from your system\n');
 
 // Determine installation directory
 const userHome = os.homedir();
-const installDir = path.join(userHome, '.textos');
-const symlinkPath = path.join(userHome, '.local', 'bin', 'textos');
+const installDir = path.join(userHome, '.irisos');
+const symlinkPath = path.join(userHome, '.local', 'bin', 'irisos');
 
 console.log(`Installation directory: ${installDir}`);
 console.log(`Symlink: ${symlinkPath}\n`);
 
-rl.question('Are you sure you want to uninstall TextOS? (y/n): ', (answer) => {
+rl.question('Are you sure you want to uninstall irisos? (y/n): ', (answer) => {
   if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-    console.log('\nUninstalling TextOS...');
+    console.log('\nUninstalling irisos...');
     
     // Remove symlink
     if (fs.existsSync(symlinkPath)) {
@@ -51,7 +53,7 @@ rl.question('Are you sure you want to uninstall TextOS? (y/n): ', (answer) => {
       console.log(`Installation directory not found: ${installDir}`);
     }
     
-    console.log('\n\x1b[32mTextOS has been uninstalled successfully!\x1b[0m\n');
+    console.log('\n\x1b[32mirisos has been uninstalled successfully!\x1b[0m\n');
   } else {
     console.log('\nUninstallation cancelled.\n');
   }
